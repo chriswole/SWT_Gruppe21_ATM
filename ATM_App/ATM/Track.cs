@@ -18,8 +18,8 @@ namespace ATM
         }
 
         private string tag_;
-        Position pos_;
-        private int altitude_;
+        public Position pos_ { get; set; }
+        public int altitude_ { get; set; }
         private int hori_velocity_;
         private int course_;
     }

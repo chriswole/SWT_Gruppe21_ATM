@@ -11,16 +11,17 @@ namespace ATM
     {
         public void calculateDistances(ToTrack toTrackObj)
         {
-           /*
-            foreach (var track1 in toTrackObj.Tracks_)
+           
+            foreach (var track1 in toTrackObj.tracks_)
             {
-                foreach (var track2 in toTrackObj.Tracks_)
+                foreach (var track2 in toTrackObj.tracks_)
                 {
-                    track1.position - track2.position;
+                    Position dist = track1.pos_ - track2.pos_;
+                    dist = dist.x_
                 }
                 
             }
-            */
+            
         }
 
 
