@@ -4,13 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace ATM
 {
     class Seperation
     {
-        public void calculateDistances()
+        public void calculateDistances(ToTrack toTrackObj)
         {
-            
+           /*
+            foreach (var track1 in toTrackObj.Tracks_)
+            {
+                foreach (var track2 in toTrackObj.Tracks_)
+                {
+                    track1.position - track2.position;
+                }
+                
+            }
+            */
         }
 
 
@@ -122,7 +132,7 @@ namespace ATM
 
         public void deactivateAlarm(Track tag1, Track tag2)
         {
-
+           
         }
     }
 }
