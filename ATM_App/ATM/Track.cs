@@ -17,10 +17,10 @@ namespace ATM
             int course_ = course;
         }
 
-        private string tag_;
+        public string tag_ { get; set; }
         public Position pos_ { get; set; }
         public int altitude_ { get; set; }
-        private int hori_velocity_;
-        private int course_;
+        public int hori_velocity_ { get; set; }
+        public int course_ { get; set; }
     }
 }
