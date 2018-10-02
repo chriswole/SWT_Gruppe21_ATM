@@ -12,5 +12,6 @@ namespace ATM.Interfaces
         Track track1_ { get; set; }
         Track track2_ { get; set; }
         int distance_ { get; set; }
+        void print();
     }
 }
