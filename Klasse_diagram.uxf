@@ -5,26 +5,26 @@
     <id>UMLClass</id>
     <coordinates>
       <x>648</x>
-      <y>684</y>
+      <y>588</y>
       <w>168</w>
       <h>180</h>
     </coordinates>
     <panel_attributes>Track
 --
 + Track(): void
-+print() : void
-- string Tag_
-- Position position_
-- int altitude_
-- int hori_velocity_
-- int course_</panel_attributes>
++ print() : void
++ string Tag_
++ Position position_
++ int altitude_
++ int hori_velocity_
++ int course_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>600</x>
-      <y>480</y>
+      <y>384</y>
       <w>240</w>
       <h>132</h>
     </coordinates>
@@ -33,7 +33,7 @@
 + inscope(event ): void
 + add(ITrack): void
 + remove(ITrack): void
-- List&lt;ITrack&gt; Tracks_
++ List&lt;ITrack&gt; Tracks_
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -41,7 +41,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>768</x>
-      <y>132</y>
+      <y>24</y>
       <w>216</w>
       <h>96</h>
     </coordinates>
@@ -54,49 +54,51 @@
     <id>UMLClass</id>
     <coordinates>
       <x>732</x>
-      <y>276</y>
+      <y>168</y>
       <w>288</w>
-      <h>132</h>
+      <h>144</h>
     </coordinates>
     <panel_attributes>Separation
 --
 + calculateDistances(): void
-+ RaiseAlarm(tag1, tag2): void
-+ DeactivateAlarm(tag1, tag2): void</panel_attributes>
++ RaiseAlarm(): void
++ DeactivateAlarm(): void
++ List&lt;IDanger&gt; newDangers_
++ List&lt;IDanger&gt; oldDangers_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>900</x>
-      <y>480</y>
-      <w>240</w>
+      <x>864</x>
+      <y>384</y>
+      <w>324</w>
       <h>168</h>
     </coordinates>
     <panel_attributes>Logger
 --
-+ AddToLog(tag1, tag2): void</panel_attributes>
++ AddToLog(IDanger Danger2Log): void</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>684</x>
-      <y>924</y>
+      <y>828</y>
       <w>96</w>
       <h>96</h>
     </coordinates>
     <panel_attributes>Position
 --
-- int x_
-- int y_</panel_attributes>
++ int x_
++ int y_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>852</y>
+      <y>756</y>
       <w>36</w>
       <h>96</h>
     </coordinates>
@@ -107,7 +109,7 @@
     <id>Relation</id>
     <coordinates>
       <x>720</x>
-      <y>600</y>
+      <y>504</y>
       <w>60</w>
       <h>108</h>
     </coordinates>
@@ -121,7 +123,7 @@
     <id>Relation</id>
     <coordinates>
       <x>708</x>
-      <y>396</y>
+      <y>300</y>
       <w>180</w>
       <h>108</h>
     </coordinates>
@@ -132,7 +134,7 @@
     <id>Relation</id>
     <coordinates>
       <x>852</x>
-      <y>396</y>
+      <y>300</y>
       <w>192</w>
       <h>108</h>
     </coordinates>
@@ -143,7 +145,7 @@
     <id>Relation</id>
     <coordinates>
       <x>864</x>
-      <y>216</y>
+      <y>108</y>
       <w>36</w>
       <h>84</h>
     </coordinates>
@@ -154,7 +156,7 @@
     <id>UMLClass</id>
     <coordinates>
       <x>336</x>
-      <y>480</y>
+      <y>384</y>
       <w>156</w>
       <h>120</h>
     </coordinates>
@@ -167,7 +169,7 @@
     <id>Relation</id>
     <coordinates>
       <x>480</x>
-      <y>540</y>
+      <y>444</y>
       <w>144</w>
       <h>36</h>
     </coordinates>
@@ -178,12 +180,13 @@
     <id>UMLClass</id>
     <coordinates>
       <x>1212</x>
-      <y>480</y>
+      <y>384</y>
       <w>156</w>
       <h>192</h>
     </coordinates>
     <panel_attributes>Danger
 --
++ print(): void
 + Track track1_
 + Track track2_
 + int distance_</panel_attributes>
@@ -193,7 +196,7 @@
     <id>Relation</id>
     <coordinates>
       <x>852</x>
-      <y>396</y>
+      <y>300</y>
       <w>468</w>
       <h>108</h>
     </coordinates>
