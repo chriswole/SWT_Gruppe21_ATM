@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace ATM
 {
-    class Track
+    class Track:ITrack
     {
-        public Track(string tag, Position pos, int altitude, int horivelocity, int course)
+        public Track(string tag, Position pos, int altitude, int horiVelocity, int course)
         {
             string tag_ = tag;
             Position pos_ = pos;
             int altitude_ = altitude;
-            int hori_velocity_ = horivelocity;
+            int hori_velocity_ = horiVelocity;
             int course_ = course;
         }
 

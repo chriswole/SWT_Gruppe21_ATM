@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Danger.cs" />
+    <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Position.cs" />
