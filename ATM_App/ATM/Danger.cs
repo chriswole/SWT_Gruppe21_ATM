@@ -9,14 +9,14 @@ namespace ATM
 {
     class Danger :IDanger
     {
-        public Danger(Track track1, Track track2, int dist)
+        public Danger(ITrack track1, ITrack track2, int dist)
         {
             track1_ = track1;
             track2_ = track2;
             distance_ = dist; 
         }
-        public Track track1_ { get; set; }
-        public Track track2_ { get; set; }
+        public ITrack track1_ { get; set; }
+        public ITrack track2_ { get; set; }
         public int distance_ { get; set; }
         public void print()// the altitude is per definition less than 300, otherwise danger isn't created. 
         {
