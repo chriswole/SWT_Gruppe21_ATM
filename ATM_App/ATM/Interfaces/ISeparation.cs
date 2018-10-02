@@ -8,9 +8,11 @@ namespace ATM.Interfaces
 {
     interface ISeparation
     {
-        List<IDanger> newDangers_;
-        List<IDanger> OldDangers_;
+        //List<IDanger> newDangers_;
+        //List<IDanger> OldDangers_;
 
-        void calculateDistances(ToTrack toTrackObj)
+        void calculateDistances(ToTrack toTrackObj);
+        void raiseAlarm();
+        void deactivateAlarm();
     }
 }

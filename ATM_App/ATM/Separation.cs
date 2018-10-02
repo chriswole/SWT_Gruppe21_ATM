@@ -47,12 +47,12 @@ namespace ATM
 
 
 
-        public void raiseAlarm(Track tag1, Track tag2)
+        public void raiseAlarm()
         {
 
         }
 
-        public void deactivateAlarm(Track tag1, Track tag2)
+        public void deactivateAlarm()
         {
            
         }
