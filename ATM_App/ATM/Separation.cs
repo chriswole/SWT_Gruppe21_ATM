@@ -4,19 +4,20 @@ using System.Linq;
 using System.Runtime.Remoting.Services;
 using System.Text;
 using System.Threading.Tasks;
+using ATM.Interfaces;
 
 
 namespace ATM
 {
-    class Seperation
+    class Separation : ISeparation
     {
-        public List<Danger> newDangers_;
-        public List<Danger> OldDangers_;
+        public List<IDanger> newDangers_;
+        public List<IDanger> OldDangers_;
 
-        public Seperation()
+        public Separation()
         {
-            newDangers_ = new List<Danger>();
-            OldDangers_ = new List<Danger>();
+            newDangers_ = new List<IDanger>();
+            OldDangers_ = new List<IDanger>();
         }
 
         public void calculateDistances(ToTrack toTrackObj)
@@ -34,112 +35,13 @@ namespace ATM
                         {
                             Danger dangerObj = new Danger(track1, track2, (int) distance);
                             newDangers_.Add(dangerObj);
-                            
                         }
                     }
                 }
-                
             }
-            
         }
 
        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

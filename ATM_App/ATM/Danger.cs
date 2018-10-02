@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ATM.Interfaces;
 
 namespace ATM
 {
-    class Danger
+    class Danger :IDanger
     {
         public Danger(Track track1, Track track2, int dist)
         {
