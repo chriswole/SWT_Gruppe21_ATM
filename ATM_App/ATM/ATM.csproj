@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Danger.cs" />
+    <Compile Include="Interfaces\IDanger.cs" />
+    <Compile Include="Interfaces\ISeparation.cs" />
     <Compile Include="Interfaces\ITrack.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Seperation.cs" />
+    <Compile Include="Separation.cs" />
     <Compile Include="ToTrack.cs" />
     <Compile Include="Track.cs" />
   </ItemGroup>
