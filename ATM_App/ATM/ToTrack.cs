@@ -4,16 +4,18 @@ using System.Linq;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using ATM.Interfaces;
 
 namespace ATM
 {
-    class ToTrack
+    class ToTrack : IToTrack
     {
-        public List<Track> tracks_;
+        public List<ITrack> Tracks { get; set; }
 
         public ToTrack()
         {
-            tracks_ = new List<Track>();
+            Tracks = new List<ITrack>();
+            Tracks.Add
         }
 
        

@@ -11,7 +11,7 @@ namespace ATM.Interfaces
         //List<IDanger> newDangers_;
         //List<IDanger> OldDangers_;
 
-        void calculateDistances(ToTrack toTrackObj);
+        void calculateDistances(IToTrack toTrackObj);
         void raiseAlarm();
         void deactivateAlarm();
     }

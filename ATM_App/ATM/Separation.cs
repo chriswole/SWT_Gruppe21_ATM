@@ -22,9 +22,9 @@ namespace ATM
 
         public void calculateDistances(ToTrack toTrackObj)
         {
-            foreach (var track1 in toTrackObj.tracks_)
+            foreach (var track1 in toTrackObj.Tracks)
             {
-                foreach (var track2 in toTrackObj.tracks_)
+                foreach (var track2 in toTrackObj.Tracks)
                 {
                     Position dist = track1.pos_ - track2.pos_;
                     var distance = Math.Sqrt(dist.x_ ^ 2 + dist.y_ ^ 2);
