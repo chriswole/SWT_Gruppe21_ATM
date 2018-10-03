@@ -1,6 +1,7 @@
 ﻿using ATM.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 
 namespace ATM
@@ -54,30 +55,14 @@ namespace ATM
 
         public void raiseAlarm()
         {
-            foreach (var dangerObj in newDangers_)
-            {
-                if (newDangers_.Contains(dangerObj))
-                {
-                    OldDangers_.Add(dangerObj);
-                }
-
-                else
-                {
-                    newDangers_.Add(dangerObj);
-                }
-            }
+            var newDangers = newDangers_.Except(OldDangers_);
+            newDangers_.ForEach(i => Console.Write("{0}\t",newDangers_));
         }
 
         public void deactivateAlarm()
         {
 
-            foreach (var dangerObj in OldDangers_)
-            {
-                if (OldDangers_.Contains(dangerObj))
-                {
-                    OldDangers_.Remove(dangerObj);
-                }
-            }
+            var oldDangers = OldDangers_.Except(newDangers_);
 
         }
     }
