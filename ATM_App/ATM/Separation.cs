@@ -70,7 +70,15 @@ namespace ATM
 
         public void deactivateAlarm()
         {
-           
+
+            foreach (var dangerObj in OldDangers_)
+            {
+                if (OldDangers_.Contains(dangerObj))
+                {
+                    OldDangers_.Remove(dangerObj);
+                }
+            }
+
         }
     }
 }
