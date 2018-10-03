@@ -13,14 +13,12 @@ namespace ATM
     {
         public List<IDanger> newDangers_ { get; set; }
         public List<IDanger> OldDangers_ { get; set; }
-        public List<IDanger> AlarmDangers { get; set; }
 
 
         public Separation()
         {
             newDangers_ = new List<IDanger>();
             OldDangers_ = new List<IDanger>();
-            AlarmDangers = new List<IDanger>();
         }
 
         public void calculateDistances(IToTrack toTrackObj)
@@ -56,11 +54,11 @@ namespace ATM
 
 
 
-        public void raiseAlarm()
+        public void raiseAlarm(IDanger alarm)
         {
             foreach (var danger in newDangers_)
             {
-                print();
+                alarm.print();
             }
         }
 
