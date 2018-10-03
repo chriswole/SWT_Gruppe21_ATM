@@ -2,7 +2,7 @@
 
 namespace ATM
 {
-    public class Position
+    public class Position:IPosition
     {
         public Position(int x=0, int y=0)
         {
