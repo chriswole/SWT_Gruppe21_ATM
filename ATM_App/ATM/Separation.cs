@@ -63,21 +63,15 @@ namespace ATM
 
         public void raiseAlarm()
         {
+            //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
             var newDangers = newDangers_.Except(OldDangers_);
 
-            EventHandler handleWarn = Warning;
-            if (newDangers_ != null)
-            {
-                handleWarn(this, EventArgs e);
-            }
-
-
-                
+            
         }
 
         public void deactivateAlarm()
         {
-
+            //Compares newDangers_ with OldDangers_ and removes matching elements from OldDangers_
             var oldDangers = OldDangers_.Except(newDangers_);
 
         }
