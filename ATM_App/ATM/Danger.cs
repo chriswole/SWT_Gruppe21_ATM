@@ -20,7 +20,7 @@ namespace ATM
         public int distance_ { get; set; }
         public void print()// the altitude is per definition less than 300, otherwise danger isn't created. 
         {
-            Console.Write("%d and %d Distance: %d", track1_.tag_, track2_.tag_, distance_);
+            Console.Write("%s and %s Distance: %d", track1_.tag_, track2_.tag_, distance_);
         }
 
     }

@@ -11,8 +11,8 @@ namespace ATM
 {
     class Separation : ISeparation
     {
-        public List<IDanger> newDangers_;
-        public List<IDanger> OldDangers_;
+        public List<IDanger> newDangers_ { get; set; }
+        public List<IDanger> OldDangers_ { get; set; }
 
         public Separation()
         {
@@ -26,15 +26,21 @@ namespace ATM
             {
                 foreach (var track2 in toTrackObj.Tracks)
                 {
-                    Position dist = track1.pos_ - track2.pos_;
-                    var distance = Math.Sqrt(dist.x_ ^ 2 + dist.y_ ^ 2);
-                    if (distance<5000)
+                    // Are the planes within same altitude layer
+                    int alt = Math.Abs(track1.altitude_ - track2.altitude_);
+                    if (alt < 300)
                     {
-                        int alt = Math.Abs(track1.altitude_ - track2.altitude_);
-                        if (alt<300)
+                        // are the planes too close in xy-plane
+                        Position dist = track1.pos_ - track2.pos_;
+                        var distance = Math.Sqrt(dist.x_ ^ 2 + dist.y_ ^ 2);
+                        if (distance < 5000)
                         {
-                            Danger dangerObj = new Danger(track1, track2, (int) distance);
-                            newDangers_.Add(dangerObj);
+                            // Is the planes actually the same - if not make a dangerObj
+                            if (!(track1.Equals(track2)))
+                            {
+                                Danger dangerObj = new Danger(track1, track2, (int) distance);
+                                newDangers_.Add(dangerObj);
+                            }
                         }
                     }
                 }
