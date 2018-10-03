@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TransponderReceiver;
 
 namespace ATM
 {
-    interface IToTrack
+    class Decoder
     {
-         List<ITrack> Tracks { get; set; }
-
-     
-
+        
     }
 }

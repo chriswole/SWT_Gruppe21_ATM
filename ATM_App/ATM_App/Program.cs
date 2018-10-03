@@ -24,6 +24,18 @@ namespace ATM_App
 
             System.Console.WriteLine($"{equals}");
 
+            ToTrack testent = new ToTrack();
+
+            string testdata = "ATR423;39045;12932;14000;20151006213456789";
+
+            string[] strings = testent.ParseDataString(testdata);
+
+            foreach (var str in strings)
+            {
+                System.Console.WriteLine(str);
+                
+            }
+
         }
     }
 }
