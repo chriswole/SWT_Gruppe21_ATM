@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Interfaces
 {
-    interface IToTrack
+    public interface IToTrack
     {
          List<ITrack> Tracks { get; set; }
 

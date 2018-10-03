@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Interfaces
 {
-    interface ILogger
+    public interface ILogger
     {
         void AddToLog(IDanger danger2Log);
     }
