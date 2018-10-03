@@ -12,6 +12,6 @@ namespace ATM.Interfaces
         int altitude_ { get; set; }
         int hori_velocity_ { get; set; }
         int course_ { get; set; }
-        int timestamp_ { get; set; }
+        string timestamp_ { get; set; }
     }
 }

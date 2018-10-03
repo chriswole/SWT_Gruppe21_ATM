@@ -35,7 +35,7 @@ namespace ATM
             // Just display data
             foreach (var data in e.TransponderData)
             {
-                System.Console.WriteLine($"Transponderdata {data}");
+               // System.Console.WriteLine($"Transponderdata {data}");
             }
         }
 
@@ -49,6 +49,23 @@ namespace ATM
 
             return result;
         }
+
+
+        public Track BuildTrack(string[] stringArr)
+        {
+
+           Track track_ = new Track();
+
+            track_.tag_ = (string) stringArr[0];
+            track_.pos_.x_ = int.Parse(stringArr[1]);
+            track_.pos_.y_ = int.Parse(stringArr[2]);
+            track_.altitude_ = int.Parse(stringArr[3]);
+            track_.timestamp_ = stringArr[4];
+            
+            return track_;
+ 
+        }
+
 
 
 
