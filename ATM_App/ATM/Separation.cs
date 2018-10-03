@@ -1,7 +1,9 @@
 ﻿using ATM.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace ATM
@@ -10,14 +12,15 @@ namespace ATM
     {
         public List<IDanger> newDangers_ { get; set; }
         public List<IDanger> OldDangers_ { get; set; }
-        public List<IDanger> CompareDangers { get; set; }
 
+
+        public event EventHandler Warning;
+        
 
         public Separation()
         {
             newDangers_ = new List<IDanger>();
             OldDangers_ = new List<IDanger>();
-            CompareDangers = new List<IDanger>();
         }
 
         public void calculateDistances(IToTrack toTrackObj)
@@ -47,8 +50,13 @@ namespace ATM
             }
         }
 
-       
 
+        public class Warnings : EventArgs
+        {
+            public bool WithinDistance { get; set; }
+            public int AddWarning { get; set; }
+            public int RemoveWarning { get; set; }
+        }
 
 
 
@@ -56,7 +64,15 @@ namespace ATM
         public void raiseAlarm()
         {
             var newDangers = newDangers_.Except(OldDangers_);
-            newDangers_.ForEach(i => Console.Write("{0}\t",newDangers_));
+
+            EventHandler handleWarn = Warning;
+            if (newDangers_ != null)
+            {
+                handleWarn(this, EventArgs e);
+            }
+
+
+                
         }
 
         public void deactivateAlarm()
