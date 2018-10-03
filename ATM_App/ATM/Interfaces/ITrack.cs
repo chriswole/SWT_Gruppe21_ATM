@@ -12,5 +12,6 @@ namespace ATM
         int altitude_ { get; set; }
         int hori_velocity_ { get; set; }
         int course_ { get; set; }
+        int timestamp_ { get; set; }
     }
 }
