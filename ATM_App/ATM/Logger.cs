@@ -26,7 +26,8 @@ namespace ATM
                 sw.Close();
             }
             catch (Exception e)
-            {
+            {   
+                //Print out exception if it happened. 
                 Console.WriteLine("Exception: " + e.Message);
             }
         }
