@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ATM
 {
-    class Track:ITrack
+    public class Track:ITrack
     {
-        public Track(string tag, Position pos, int altitude, int horiVelocity, int course)
+        public Track(string tag = "", Position pos = null, int altitude = 0, int horiVelocity = 0, int course = 0)
         {
             string tag_ = tag;
             Position pos_ = pos;
@@ -22,5 +22,6 @@ namespace ATM
         public int altitude_ { get; set; }
         public int hori_velocity_ { get; set; }
         public int course_ { get; set; }
+
     }
 }

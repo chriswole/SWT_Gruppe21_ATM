@@ -20,7 +20,7 @@ namespace ATM
             OldDangers_ = new List<IDanger>();
         }
 
-        public void calculateDistances(ToTrack toTrackObj)
+        public void calculateDistances(IToTrack toTrackObj)
         {
             foreach (var track1 in toTrackObj.Tracks)
             {
