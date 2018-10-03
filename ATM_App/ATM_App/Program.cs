@@ -5,6 +5,7 @@ using System.Runtime.Remoting.Services;
 using System.Text;
 using System.Threading.Tasks;
 using ATM;
+using ATM.Interfaces;
 
 namespace ATM_App
 {
@@ -30,11 +31,26 @@ namespace ATM_App
 
             string[] strings = testent.ParseDataString(testdata);
 
-            foreach (var str in strings)
+            for (int i = 0; i < 5; i++)
             {
-                System.Console.WriteLine(str);
-                
+                System.Console.WriteLine(strings[i]);
             }
+
+            Track track = testent.BuildTrack(strings);
+
+            System.Console.WriteLine($"{track.timestamp_}");
+
+           //string trackString = track.ToString();
+
+            ///System.Console.WriteLine(trackString);
+
+            //foreach (var str in strings)
+            //{
+             //   System.Console.WriteLine(str);
+                
+            //}
+
+
 
         }
     }

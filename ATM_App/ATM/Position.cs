@@ -7,14 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using ATM.Interfaces;
 
-namespace ATM
+namespace ATM.Interfaces
 {
     public class Position:IPosition
     {
         public Position(int x=0, int y=0)
         {
-            int x_ = x;
-            int y_ = y;
+            x_ = x;
+            y_ = y;
         }
 
         public int x_ { get; set; }

@@ -16,26 +16,31 @@ namespace ATMTrackUnitTest
 {
     [TestFixture]
     [Author("Mette Jacobsen, Edited by members of group 21")]
-  
-       
-        [TestClass]
-        class ITrackTest
+
+
+    class ITrackTest
+    {
+        public ITrack Track1 = new Track();
+
+        public ITrack Ib
         {
-            public ITrack track_ = new Track();
+            get => Track1;
+            set => Track1 = value;
+        }
 
-            [Setup]//BUT WHY!
-            public void Setup()
-            {
-                track_.tag_ = "Mc238";
-                track_.pos_ = new Position(2000, 2000);
-                track_.altitude_ = 10000;
-                track_.hori_velocity_ = 2000;
-                track_.course_ = 89;
-
-
-            }
+        [SetUp]//Husk stort U!
+        public void Setup()
+        {
+            Track1.tag_ = "Mc238";
+            Track1.pos_ = new Position(2000, 2000);
+            Track1.altitude_ = 10000;
+            Track1.hori_velocity_ = 2000;
+            Track1.course_ = 89;
+            
+        }
 
         }
+
+}
         
     
-}
