@@ -26,7 +26,7 @@ namespace ATM
         public int altitude_ { get; set; }
         public int hori_velocity_ { get; set; }
         public int course_ { get; set; }
-        public int timestamp_{get; set;}
+        public int timestamp_ { get; set; }
 
-}
+    }
 }
