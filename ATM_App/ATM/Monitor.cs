@@ -8,5 +8,14 @@ namespace ATM
 {
     class Monitor
     {
+        public void initMonitor()
+        {
+
+        }
+
+        public void updateMonitor()
+        {
+
+        }
     }
 }

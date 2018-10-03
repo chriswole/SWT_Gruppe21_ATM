@@ -14,6 +14,7 @@ namespace ATM
         public List<IDanger> newDangers_ { get; set; }
         public List<IDanger> OldDangers_ { get; set; }
 
+
         public Separation()
         {
             newDangers_ = new List<IDanger>();
@@ -53,9 +54,12 @@ namespace ATM
 
 
 
-        public void raiseAlarm()
+        public void raiseAlarm(IDanger alarm, ISeparation objects)
         {
-
+            foreach (var danger in objects.newDangers_)
+            {
+                alarm.print();
+            }
         }
 
         public void deactivateAlarm()
