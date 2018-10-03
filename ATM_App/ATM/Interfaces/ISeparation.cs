@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Interfaces
 {
-    interface ISeparation
+    public interface ISeparation
     {
         List<IDanger> newDangers_ { get; set; }
         List<IDanger> OldDangers_ { get; set; }

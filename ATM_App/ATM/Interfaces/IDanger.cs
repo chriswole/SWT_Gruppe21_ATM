@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ATM.Interfaces
 {
-    interface IDanger
+    public interface IDanger
     {
         
         ITrack track1_ { get; set; }
