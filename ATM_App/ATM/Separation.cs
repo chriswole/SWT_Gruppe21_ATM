@@ -54,12 +54,11 @@ namespace ATM
 
 
 
-        public void raiseAlarm()
+        public void raiseAlarm(ISeparation alarm)
         {
-            AlarmDangers = new List<IDanger>();
-            foreach (var dangerObj in AlarmDangers)
+            foreach (var in )
             {
-
+                
             }
         }
 
