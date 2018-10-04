@@ -16,7 +16,7 @@ namespace ATM
         private ITransponderReceiver receiver;
 
         //Air space definition:
-        private IPosition southWestCorner = new Position(10000, 10000), northEastCorner = new Position(90000, 90000);
+        private Position southWestCorner = new Position(10000, 10000), northEastCorner = new Position(90000, 90000);
         private int lowest_altitude = 500, highest_altitude = 20000;
 
         public ToTrack()
