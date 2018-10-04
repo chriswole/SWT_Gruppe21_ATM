@@ -40,7 +40,7 @@ namespace ATM
             return str;
         }
 
-        public static bool operator==(Track track1, Track track2)
+       public static bool operator==(Track track1, Track track2)
         {
             
             if (track1.tag_ == track2.tag_ &&
@@ -76,6 +76,7 @@ namespace ATM
             }
 
         }
+        
 
 
     }

@@ -23,22 +23,18 @@ namespace ATMTrackUnitTest
     class TrackTest
     {
 
-        public Track uut;
-        string tag, timestamp;
-        Position pos;
-        private int altitude, hori_velocity, course;
-
+        public Track uut; 
+        string tag = "MJ2412", timestamp = "20181224";
+        Position pos = new Position(50000, 40000);
+        private int altitude = 20000, hori_velocity = 400, course = 90;
+        
 
         [SetUp] //Husk stort U!
         public void Setup()
         {
-            pos = new Position(50000, 40000);
-            tag = "MJ2412";
-            altitude = 20000;
-            hori_velocity = 400;
-            course = 90;
-            timestamp = "20181224";
-            uut = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
+           uut = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
+
+            
 
          }
         [Test] 
@@ -77,6 +73,116 @@ namespace ATMTrackUnitTest
             Assert.That(uut.course_, Is.EqualTo(course2));
             Assert.That(uut.timestamp_, Is.EqualTo(timestamp2));
 
+        }
+
+        [Test]
+        public void Equals_Operator_Result_True()
+        {
+            //Test true after default ctor:
+            bool result;
+            Track track1 = new Track();
+            Track track2 = new Track();
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            //Test true after explicit ctor:
+            track1 = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
+            track2 = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
+            
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            //Test true self comparison
+            result = track1 == track1;
+            Assert.That(result, Is.EqualTo(true));
+        }
+
+        [Test]
+        public void Equals_Operator_Result_False()
+        {
+            bool result;
+
+            //Test false  on one diffferent param:
+            Track track1 = new Track();
+            Track track2 = new Track(tag: "tag");
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(false));
+            
+            track2 = new Track(pos: new Position(100, 100));
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(false));
+
+            track2 = new Track(altitude: 100);
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(false));
+
+            track2 = new Track(horiVelocity: 100);
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(false));
+
+            track2 = new Track(course: 100);
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(false));
+
+            track2 = new Track(timestamp: "Timestamp");
+            result = track1 == track2;
+            Assert.That(result, Is.EqualTo(false));
+            
+        }
+
+      /*  [Test]
+        public void Not_Equals_Operator_Result_True()
+        {
+            bool result;
+
+            //Test true on one different param:
+            Track track1 = new Track();
+            Track track2 = new Track(tag: "tag");
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            track2 = new Track(pos: new Position(100, 100));
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            track2 = new Track(altitude: 100);
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            track2 = new Track(horiVelocity: 100);
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            track2 = new Track(course: 100);
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(true));
+
+            track2 = new Track(timestamp: "Timestamp");
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(true));
+
+        } */
+
+
+        public void Not_Equals_Operator_Result_False()
+        {
+            //Test true after default ctor:
+            bool result;
+            Track track1 = new Track();
+            Track track2 = new Track();
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(false));
+
+            //Test true after explicit ctor:
+            track1 = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
+            track2 = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
+
+            result = track1 != track2;
+            Assert.That(result, Is.EqualTo(false));
+
+            //Test true self comparison
+            result = track1 != track1;
+            Assert.That(result, Is.EqualTo(false));
         }
 
     }
