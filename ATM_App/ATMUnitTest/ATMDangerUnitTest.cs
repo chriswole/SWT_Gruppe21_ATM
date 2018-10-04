@@ -14,25 +14,32 @@ namespace ATMUnitTest
     {
         public Danger _uut;
 
-        public ITrack track1_ { get; set; }
-        public ITrack track2_ { get; set; }
-        public int distance_ { get; set; }
+        public Track track1_ { get; }
+        public Track track2_ { get; }
+        public int distance_ { get; }
 
+        
+        Track track1;
+        Track track2;
 
         [SetUp]
         public void Setup()
         {
-            track1_ = NSubstitute.Substitute.For<ITrack>();
-            track2_ = NSubstitute.Substitute.For<ITrack>();
-
+            Position pos1= new Position(20110,54000);
+            Position pos2= new Position(54210, 48214);
+            track1 = new Track("TAG4S", pos1, 10000, 587, 85,"20180215");
+            track2 = new Track("KRS8S", pos2, 14005, 421, 254, "20181005");
+            
             _uut = new Danger(track1_, track2_,2500 );
         }
-        /*
+
+        
         [Test]
-        public void CanNotChangeTracks()
-        {
-            track1_ = new ;
-            Assert.That(_uut.track1_, Is.Not.EqualTo(t1));
-        }*/
+        public void ConstructorAndGetTest()
+        { 
+            Assert.That(_uut.track1_, Is.EqualTo(track1));
+            Assert.That(_uut.track2_, Is.EqualTo(track2));
+            Assert.That(_uut.distance_, Is.EqualTo(2500));
+        }
     }
 }

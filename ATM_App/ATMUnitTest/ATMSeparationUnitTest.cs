@@ -12,16 +12,15 @@ namespace ATMUnitTest
     [TestFixture]
     class ATMSeparationUnitTest
     {
-        public List<IDanger> newDangers_ { get; set; }
-        public List<IDanger> oldDangers_ { get; set; }
+       
 
-        [SetUp]
+        /*[SetUp]
         public void Setup()
         {
             newDangers_ = new List<IDanger>();
             oldDangers_ = new List<IDanger>();
             //NSubstitute.Substitute.For<IDanger>()
-        }
+        }*/
 
         [Test]
         public void raiseAlarm()

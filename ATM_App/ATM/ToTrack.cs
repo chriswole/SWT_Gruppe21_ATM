@@ -11,7 +11,7 @@ namespace ATM
 {
     public class ToTrack : IToTrack
     {
-        public List<ITrack> Tracks { get; set; }
+        public List<Track> Tracks { get; set; }
 
         private ITransponderReceiver receiver;
 
@@ -21,7 +21,7 @@ namespace ATM
 
         public ToTrack()
         {
-            Tracks = new List<ITrack>();
+            Tracks = new List<Track>();
 
             //This will store the real or the fake transponder data receiver
             this.receiver = receiver;
@@ -99,7 +99,7 @@ namespace ATM
 
         }
 
-        private bool InScope(ITrack track)
+        private bool InScope(Track track)
         {
             return track.pos_ >= (Position) southWestCorner && track.pos_ <= (Position) northEastCorner &&
                    track.altitude_ >= lowest_altitude && track.altitude_ <= highest_altitude;
