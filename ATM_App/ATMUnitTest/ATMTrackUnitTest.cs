@@ -41,6 +41,7 @@ namespace ATMTrackUnitTest
             uut = new Track(tag, pos, altitude, hori_velocity, course, timestamp);
 
          }
+
         [Test] 
         public void TrackConstrucctorAndGetTest()
         {
