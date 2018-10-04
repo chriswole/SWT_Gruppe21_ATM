@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ATM
 {
-    class Separation : ISeparation
+    public class Separation : ISeparation
     {
         public List<IDanger> newDangers_ { get; set; }
         public List<IDanger> OldDangers_ { get; set; }
@@ -51,12 +51,7 @@ namespace ATM
         }
 
 
-        public class Warnings : EventArgs
-        {
-            public bool WithinDistance { get; set; }
-            public int AddWarning { get; set; }
-            public int RemoveWarning { get; set; }
-        }
+
 
 
 
@@ -65,8 +60,15 @@ namespace ATM
         {
             //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
             var newDangers = newDangers_.Except(OldDangers_);
+            foreach (var dangerObj in newDangers_)
+            {
 
-            
+                newDangers_.ForEach(danger => Console.Write("Warning, the following planes are too close!\n{0}",newDangers_));
+            }
+
+            //System.Threading.Thread.Sleep(5000);
+            // newDangers_.ForEach(Console.Write("{0}\t", newDangers_));
+
         }
 
         public void deactivateAlarm()
