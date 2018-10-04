@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using ATM;
 using NUnit.Framework;
 using ATM.Interfaces;
+
 
 namespace ATMUnitTest
 {
@@ -14,33 +17,53 @@ namespace ATMUnitTest
     {
        
 
-        /*[SetUp]
+        ISeparation TestSeparation = new Separation();
+
+
+        [SetUp]
+
+
+
         public void Setup()
         {
-            newDangers_ = new List<Danger>();
-            oldDangers_ = new List<Danger>();
+            
+            TestSeparation.newDangers_ = new List<Danger>();
+            TestSeparation.OldDangers_ = new List<Danger>();
             //NSubstitute.Substitute.For<Danger>()
-        }*/
-/*
-        [Test]
-        public void raiseAlarm()
-        {
-            foreach (var danger in newDangers_)
-            {
-                Assert.AreEqual(1, newDangers_.Except(oldDangers_));
-            }
         }
 
         [Test]
-        public void deactivateAlarm()
+        public void raiseAlarmTrue()
         {
-            foreach (var danger in oldDangers_)
-            {
-                Assert.AreEqual(1, oldDangers_.Except(newDangers_));
-            }
-        }
-        */
 
+            List<Danger> results = new List<Danger>();
+            
+            Assert.IsTrue(TestSeparation.newDangers_.Except(TestSeparation.OldDangers_).Count()==0);
+        }
+
+        [Test]
+        public void raiseAlarmFalse()
+        {
+            List<Danger> results = new List<Danger>();
+
+            Assert.IsFalse(TestSeparation.newDangers_.Except(TestSeparation.OldDangers_).Count() == 0);
+        }
+
+        [Test]
+        public void deactivateAlarmTrue()
+        {
+            List<Danger> results = new List<Danger>();
+
+            Assert.IsTrue(TestSeparation.OldDangers_.Except(TestSeparation.newDangers_).Count() == 0);
+        }
+
+        [Test]
+        public void deactivateAlarmFalse()
+        {
+            List<Danger> results = new List<Danger>();
+
+            Assert.IsFalse(TestSeparation.OldDangers_.Except(TestSeparation.newDangers_).Count() == 0);
+        }
 
     }
 }
