@@ -18,7 +18,7 @@ namespace ATMUnitTest
        
 
         ISeparation TestSeparation = new Separation();
-
+        private List<Track> testList;
 
         [SetUp]
 
@@ -29,7 +29,9 @@ namespace ATMUnitTest
             
             TestSeparation.newDangers_ = new List<Danger>();
             TestSeparation.OldDangers_ = new List<Danger>();
-            //NSubstitute.Substitute.For<Danger>()
+            testList = new List<Track>();
+
+
         }
 
         [Test]

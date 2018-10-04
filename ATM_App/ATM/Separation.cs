@@ -20,11 +20,11 @@ namespace ATM
             OldDangers_ = new List<Danger>();
         }
 
-        public void calculateDistances(ToTrack toTrackObj)
+        public void calculateDistances(List<Track> trackList)
         {
-            foreach (var track1 in toTrackObj.Tracks)
+            foreach (var track1 in trackList)
             {
-                foreach (var track2 in toTrackObj.Tracks)
+                foreach (var track2 in trackList)
                 {
                     // Are the planes within same altitude layer
                     int alt = Math.Abs(track1.altitude_ - track2.altitude_);
