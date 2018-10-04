@@ -71,7 +71,7 @@ namespace ATM
         }
 
         //Helper function to separate Transponder data:
-        private string[] ParseDataString(string datastr)
+        public string[] ParseDataString(string datastr)
         {
 
             string[] tokens; //Track data tokens as strings
@@ -84,7 +84,7 @@ namespace ATM
         }
 
         //Helper function to build Track from tokens
-        private Track BuildTrack(string[] stringArr)
+        public Track BuildTrack(string[] stringArr)
         {
 
             Track track_ = new Track();

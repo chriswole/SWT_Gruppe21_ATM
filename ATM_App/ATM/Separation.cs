@@ -1,10 +1,9 @@
-﻿using System;
+﻿using ATM.Interfaces;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Runtime.Remoting.Services;
-using System.Text;
-using System.Threading.Tasks;
-using ATM.Interfaces;
+using System.Security.Cryptography.X509Certificates;
 
 
 namespace ATM
@@ -14,6 +13,9 @@ namespace ATM
         public List<IDanger> newDangers_ { get; set; }
         public List<IDanger> OldDangers_ { get; set; }
 
+
+        public event EventHandler Warning;
+        
 
         public Separation()
         {
@@ -48,23 +50,30 @@ namespace ATM
             }
         }
 
-       
 
-
-
-
-
-        public void raiseAlarm(IDanger alarm, ISeparation objects)
+        public class Warnings : EventArgs
         {
-            foreach (var danger in objects.newDangers_)
-            {
-                alarm.print();
-            }
+            public bool WithinDistance { get; set; }
+            public int AddWarning { get; set; }
+            public int RemoveWarning { get; set; }
+        }
+
+
+
+
+        public void raiseAlarm()
+        {
+            //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
+            var newDangers = newDangers_.Except(OldDangers_);
+
+            
         }
 
         public void deactivateAlarm()
         {
-           
+            //Compares newDangers_ with OldDangers_ and removes matching elements from OldDangers_
+            var oldDangers = OldDangers_.Except(newDangers_);
+
         }
     }
 }

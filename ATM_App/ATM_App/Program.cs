@@ -16,6 +16,7 @@ namespace ATM_App
 
             ITrack track1 = new Track();
             ITrack track2 = new Track("tag", new Position(1, 1));
+            ITrack track3 = new Track();
 
             bool equals = track1 == track1;
 
@@ -24,6 +25,11 @@ namespace ATM_App
             equals = track1 == track2;
 
             System.Console.WriteLine($"{equals}");
+
+            equals = track1 == track3;
+
+            System.Console.WriteLine($"{equals}");
+
 
             ToTrack testent = new ToTrack();
 
@@ -40,15 +46,17 @@ namespace ATM_App
 
             System.Console.WriteLine($"{track.timestamp_}");
 
-           //string trackString = track.ToString();
+            //string trackString = track.ToString();
 
             ///System.Console.WriteLine(trackString);
 
             //foreach (var str in strings)
             //{
-             //   System.Console.WriteLine(str);
-                
+            //   System.Console.WriteLine(str);
+
             //}
+
+
 
 
 

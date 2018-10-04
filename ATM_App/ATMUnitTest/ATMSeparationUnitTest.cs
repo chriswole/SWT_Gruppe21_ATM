@@ -18,7 +18,9 @@ namespace ATMUnitTest
         [SetUp]
         public void Setup()
         {
-
+            newDangers_ = new List<IDanger>();
+            oldDangers_ = new List<IDanger>();
+            //NSubstitute.Substitute.For<IDanger>()
         }
 
 
