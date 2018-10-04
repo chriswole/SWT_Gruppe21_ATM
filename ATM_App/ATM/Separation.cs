@@ -8,7 +8,7 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace ATM
 {
-    class Separation : ISeparation
+    public class Separation : ISeparation
     {
         public List<IDanger> newDangers_ { get; set; }
         public List<IDanger> OldDangers_ { get; set; }

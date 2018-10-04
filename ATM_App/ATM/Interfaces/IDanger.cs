@@ -9,9 +9,9 @@ namespace ATM.Interfaces
     public interface IDanger
     {
         
-        ITrack track1_ { get; set; }
-        ITrack track2_ { get; set; }
-        int distance_ { get; set; }
+        ITrack track1_ { get; }
+        ITrack track2_ { get; }
+        int distance_ { get; }
         void print();
     }
 }
