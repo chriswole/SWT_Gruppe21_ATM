@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ATM;
 using ATM.Interfaces;
+using Track = ATM.Track;
 
 namespace ATMTrackUnitTest
 {
@@ -22,11 +23,21 @@ namespace ATMTrackUnitTest
     {
         public Track Track1 = new Track();
 
-        public Track Ib
+        public Track Ib//Hvorfor fuck hedder den Ib??
         {
             get => Track1;
             set => Track1 = value;
         }
+
+
+        public Track Track2 = new Track();
+
+        public Track Track2
+        {
+            get => Track2;
+            set => Track1 = value;
+        }
+
 
         [SetUp] //Husk stort U!
         public void Setup()
@@ -38,16 +49,25 @@ namespace ATMTrackUnitTest
             Track1.course_ = 89;
             Track1.timestamp_ = "12:00"; //hvordan skal de sættes?
 
+            Console.WriteLine(Track1);
+            
+
+        }
+        [Test] //eller (Test)
+        public void ChangePositionOnTrak()
+        {
+            Track1.pos_ = new Position(2500, 1500);
+
+            Console.WriteLine(Track1);
+
+
         }
 
-        /*[TestCase] //eller (Test)
 
-<<<<<<< HEAD
-    }
-=======
-    */
     }
 
 }
+
+
         
     
