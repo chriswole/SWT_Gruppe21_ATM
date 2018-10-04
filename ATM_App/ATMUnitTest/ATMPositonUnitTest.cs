@@ -67,6 +67,21 @@ namespace ATMUnitTest
             Position pos2 = new Position(x2, y2);
             Assert.That(pos1 >= pos2, Is.EqualTo(result));
         }
-      
+
+        //Comparison returns true
+        [TestCase(9000, 9000, 9000, 9000, true)] //equals
+        [TestCase(2000, 2000, 9000, 9000, true)] // lesser
+        //Comparison returns false
+        [TestCase(10000, 10000, 9000, 9000, false)] //greater on both x and y
+        [TestCase(10000, 2000, 9000, 9000, false)] //greater on x
+        [TestCase(2000, 10000, 1000, 1000, false)] //greater on y
+
+        public void LesserEquals_Operator_Test(int x1, int y1, int x2, int y2, bool result)
+        {
+            Position pos1 = new Position(x1, y1);
+            Position pos2 = new Position(x2, y2);
+            Assert.That(pos1 <= pos2, Is.EqualTo(result));
+        }
+
     }
 }
