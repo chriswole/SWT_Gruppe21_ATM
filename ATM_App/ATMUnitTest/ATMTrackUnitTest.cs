@@ -131,7 +131,7 @@ namespace ATMTrackUnitTest
             
         }
 
-      /*  [Test]
+        [Test]
         public void Not_Equals_Operator_Result_True()
         {
             bool result;
@@ -161,8 +161,8 @@ namespace ATMTrackUnitTest
             track2 = new Track(timestamp: "Timestamp");
             result = track1 != track2;
             Assert.That(result, Is.EqualTo(true));
-
-        } */
+          
+        } 
 
 
         public void Not_Equals_Operator_Result_False()

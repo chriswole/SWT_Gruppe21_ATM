@@ -62,17 +62,17 @@ namespace ATM
         public static bool operator !=(Track track1, Track track2)
         {
             
-            if (track1.tag_ != track2.tag_ &&
-                track1.pos_.x_ != track2.pos_.x_ &&
-                track1.pos_.y_ != track2.pos_.y_ &&
-                track1.altitude_ != track2.altitude_ &&
-                track1.hori_velocity_ != track2.hori_velocity_ &&
-                track1.course_ != track2.course_ &&
-                track1.timestamp_ != track2.timestamp_)
-                return true;
+            if (track1.tag_ == track2.tag_ &&
+                track1.pos_.x_ == track2.pos_.x_ &&
+                track1.pos_.y_ == track2.pos_.y_ &&
+                track1.altitude_ == track2.altitude_ &&
+                track1.hori_velocity_ == track2.hori_velocity_ &&
+                track1.course_ == track2.course_ &&
+                track1.timestamp_ == track2.timestamp_)
+                return false;
             else
             {
-                return false;
+                return true;
             }
 
         }
