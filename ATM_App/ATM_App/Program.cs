@@ -13,29 +13,7 @@ namespace ATM_App
     {
         static void Main(string[] args)
         {
-
-            ITrack track1 = new Track();
-            ITrack track2 = new Track("tag", new Position(1, 1));
-            ITrack track3 = new Track();
-
-            bool equals = track1 == track1;
-
-            System.Console.WriteLine($"{equals}");
-
-            equals = track1 == track2;
-
-            System.Console.WriteLine($"{equals}");
-
-            equals = track1 == track3;
-
-            System.Console.WriteLine($"{equals}");
-
-
-          
-
-
-
-
+            
         }
     }
 }
