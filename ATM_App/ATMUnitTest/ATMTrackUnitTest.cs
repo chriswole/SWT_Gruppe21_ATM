@@ -34,7 +34,7 @@ namespace ATMTrackUnitTest
             Track1.hori_velocity_ = 2000;
             Track1.course_ = 89;
             Track1.timestamp_ = "12:00"; //hvordan skal de sættes?
-            return
+            //return
 
          }
         [Test] //eller (Test)

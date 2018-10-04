@@ -45,11 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Danger.cs" />
-    <Compile Include="Interfaces\IDanger.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IPosition.cs" />
     <Compile Include="Interfaces\ISeparation.cs" />
-    <Compile Include="Interfaces\IToTrack.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Monitor.cs" />
     <Compile Include="Position.cs" />
