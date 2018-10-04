@@ -27,8 +27,8 @@ namespace ATM
         public int hori_velocity_ { get; set; }
         public int course_ { get; set; }
         public string timestamp_{get; set;}
-
-        public override string ToString()
+        
+    public override string ToString()
         {
             string str = $"Track:\n " +
                          $"{tag_}\n " +

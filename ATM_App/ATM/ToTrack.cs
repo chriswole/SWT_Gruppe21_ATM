@@ -15,59 +15,95 @@ namespace ATM
 
         private ITransponderReceiver receiver;
 
+        //Air space definition:
+        private IPosition southWestCorner = new Position(10000, 10000), northEastCorner = new Position(90000, 90000);
+        private int lowest_altitude = 500, highest_altitude = 20000;
+
         public ToTrack()
         {
             Tracks = new List<ITrack>();
 
-            // This will store the real or the fake transponder data receiver
-            //this.receiver = receiver;
+            //This will store the real or the fake transponder data receiver
+            this.receiver = receiver;
 
-            // Attach to the event of the real or the fake TDR
-            //this.receiver.TransponderDataReady += ReceiverOnTransponderDataReady;
+            //Attach to the event of the real or the fake TDR
+            this.receiver.TransponderDataReady += ReceiverOnTransponderDataReady;
         }
 
-        
 
-       
+
+
 
         private void ReceiverOnTransponderDataReady(object sender, RawTransponderDataEventArgs e)
         {
             // Just display data
             foreach (var data in e.TransponderData)
             {
-               // System.Console.WriteLine($"Transponderdata {data}");
+
+                //create Track for potential monitoring
+                string[] tokens = ParseDataString(data);
+                Track track_ = BuildTrack(tokens);
+
+                bool inScope_ = InScope(track_);
+                bool found = false;
+                if (inScope_)
+                {
+                    for (int i = 0; i < Tracks.Count; i++)
+                        if (track_.tag_ == Tracks[i].tag_)
+                        {
+                            found = true;
+                            System.Console.WriteLine("Track found i Tacks List");
+                            if (track_ != Tracks[i])
+                            {
+                                System.Console.WriteLine("Updating Track");
+                                Tracks[i] = track_;
+                            }
+
+                        }
+
+                    if (!found)
+                        Tracks.Add(track_);
+                }
+
+
             }
+
         }
 
+        //Helper function to separate Transponder data:
         public string[] ParseDataString(string datastr)
         {
 
-            string[] result;
-            char[]charSeperators = new char[] {';'};
+            string[] tokens; //Track data tokens as strings
+            char[] charSeperators = new char[] {';'};
 
-            result = datastr.Split(charSeperators, StringSplitOptions.RemoveEmptyEntries);
+            //split TransponderData into tokens by separating at ';'
+            tokens = datastr.Split(charSeperators, StringSplitOptions.RemoveEmptyEntries);
 
-            return result;
+            return tokens;
         }
 
-
+        //Helper function to build Track from tokens
         public Track BuildTrack(string[] stringArr)
         {
 
-           Track track_ = new Track();
+            Track track_ = new Track();
 
             track_.tag_ = (string) stringArr[0];
             track_.pos_.x_ = int.Parse(stringArr[1]);
             track_.pos_.y_ = int.Parse(stringArr[2]);
             track_.altitude_ = int.Parse(stringArr[3]);
             track_.timestamp_ = stringArr[4];
-            
+
             return track_;
- 
+
         }
 
+        private bool InScope(ITrack track)
+        {
+            return track.pos_ >= (Position) southWestCorner && track.pos_ <= (Position) northEastCorner &&
+                   track.altitude_ >= lowest_altitude && track.altitude_ <= highest_altitude;
 
-
-
+        }
     }
 }
