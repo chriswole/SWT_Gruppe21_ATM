@@ -23,21 +23,7 @@ namespace ATMTrackUnitTest
     {
         public Track Track1 = new Track();
 
-        public Track Ib//Hvorfor fuck hedder den Ib??
-        {
-            get => Track1;
-            set => Track1 = value;
-        }
-
-
-        public Track Track2 = new Track();
-
-        public Track Track2
-        {
-            get => Track2;
-            set => Track1 = value;
-        }
-
+        //public Track Track2 = new Track();
 
         [SetUp] //Husk stort U!
         public void Setup()
@@ -48,17 +34,13 @@ namespace ATMTrackUnitTest
             Track1.hori_velocity_ = 2000;
             Track1.course_ = 89;
             Track1.timestamp_ = "12:00"; //hvordan skal de sættes?
+            return
 
-            Console.WriteLine(Track1);
-            
-
-        }
+         }
         [Test] //eller (Test)
         public void ChangePositionOnTrak()
         {
-            Track1.pos_ = new Position(2500, 1500);
-
-            Console.WriteLine(Track1);
+            Assert.That(Track1);
 
 
         }
@@ -69,5 +51,5 @@ namespace ATMTrackUnitTest
 }
 
 
-        
-    
+
+
