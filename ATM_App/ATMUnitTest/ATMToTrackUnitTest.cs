@@ -111,6 +111,25 @@ namespace ATMUnitTest
 
         }
 
+        [Test]
+        public void InScope_Test()
+        {
+            Track[] Tracks = new Track[]
+            {
+                new Track( "ATR423", new Position(12000, 12000), 14000, 0, 0, "20151006213456789"),
+                new Track("ATR500", new Position(16000, 16000), 14000, 0, 0,"20151006213456789" ),
+                new Track("ATR600", new Position(500,500), 14000,0, 0, "20151006213456789"),
+                new Track("ATR500", new Position(22000, 22000), 14000, 0, 0, "20151006213456789"),
+            };
+
+            Assert.That(_uut.InScope(Tracks[0]), Is.EqualTo(true));
+            Assert.That(_uut.InScope(Tracks[1]), Is.EqualTo(true));
+            Assert.That(_uut.InScope(Tracks[2]), Is.EqualTo(false));
+            Assert.That(_uut.InScope(Tracks[3]), Is.EqualTo(true));
+        }
+
+
+
 
 
         /* [Test]
