@@ -13,26 +13,22 @@ namespace ATM
     {
         public List<Track> Tracks { get; set; }
 
-        private ITransponderReceiver receiver;
+        private ITransponderReceiver receiver_;
 
         //Air space definition:
         private Position southWestCorner = new Position(10000, 10000), northEastCorner = new Position(90000, 90000);
         private int lowest_altitude = 500, highest_altitude = 20000;
 
-        public ToTrack()
+        public ToTrack(ITransponderReceiver receiver)
         {
             Tracks = new List<Track>();
 
             //This will store the real or the fake transponder data receiver
-            this.receiver = receiver;
+            this.receiver_ = receiver;
 
             //Attach to the event of the real or the fake TDR
-            this.receiver.TransponderDataReady += ReceiverOnTransponderDataReady;
+            this.receiver_.TransponderDataReady += ReceiverOnTransponderDataReady;
         }
-
-
-
-
 
         private void ReceiverOnTransponderDataReady(object sender, RawTransponderDataEventArgs e)
         {
@@ -99,7 +95,7 @@ namespace ATM
 
         }
 
-        private bool InScope(Track track)
+        public bool InScope(Track track)
         {
             return track.pos_ >= (Position) southWestCorner && track.pos_ <= (Position) northEastCorner &&
                    track.altitude_ >= lowest_altitude && track.altitude_ <= highest_altitude;
