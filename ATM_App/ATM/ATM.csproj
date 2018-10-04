@@ -45,7 +45,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Danger.cs" />
-    <Compile Include="Decoder.cs" />
     <Compile Include="Interfaces\IDanger.cs" />
     <Compile Include="Interfaces\ILogger.cs" />
     <Compile Include="Interfaces\IPosition.cs" />

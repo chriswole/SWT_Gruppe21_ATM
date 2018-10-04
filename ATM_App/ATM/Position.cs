@@ -27,5 +27,16 @@ namespace ATM.Interfaces
             pos3.y_ = pos1.y_ - pos2.y_;
             return pos3;
         }
+
+        public static bool operator>=(Position pos1, Position pos2)
+        {
+            return pos1.x_ >= pos2.x_ && pos1.y_ >= pos2.y_;
+        }
+
+        public static bool operator <=(Position pos1, Position pos2)
+        {
+
+            return pos1.x_ <= pos2.x_ && pos1.y_ <= pos2.y_;
+        }
     }
 }
