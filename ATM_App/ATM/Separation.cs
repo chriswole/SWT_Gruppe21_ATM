@@ -58,11 +58,12 @@ namespace ATM
 
         public void raiseAlarm()
         {
-            //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
-            var newDangers = newDangers_.Except(OldDangers_);
+            
+            
             foreach (var dangerObj in newDangers_)
             {
-
+                //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
+                var newDangers = newDangers_.Except(OldDangers_);
                 newDangers_.ForEach(danger => Console.Write("Warning, the following planes are too close!\n{0}",newDangers_));
             }
 
@@ -73,8 +74,12 @@ namespace ATM
 
         public void deactivateAlarm()
         {
-            //Compares newDangers_ with OldDangers_ and removes matching elements from OldDangers_
-            var oldDangers = OldDangers_.Except(newDangers_);
+            foreach (var dangerObj in OldDangers_)
+            {
+                //Compares newDangers_ with OldDangers_ and removes matching elements from OldDangers_
+                var oldDangers = OldDangers_.Except(newDangers_);
+            }
+            
 
         }
     }
