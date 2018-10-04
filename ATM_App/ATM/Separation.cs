@@ -54,6 +54,7 @@ namespace ATM
         {
             if (OldDangers_.SequenceEqual(OldDangers_))
             {
+                //Clears the OldDanger List, so the new dangers can be added
                 OldDangers_.Clear();
             }
             else
@@ -84,7 +85,7 @@ namespace ATM
                 {
                     //If not equal, add newDangers to OldDangers
                     newDangers_.AddRange(OldDangers_);
-
+                    new Logger().AddToLog(dangerObj);
                     //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
                     newDangers_.Except(OldDangers_);
                 }
