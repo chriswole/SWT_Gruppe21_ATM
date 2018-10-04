@@ -12,9 +12,6 @@ namespace ATM
     {
         public List<Danger> newDangers_ { get; set; }
         public List<Danger> OldDangers_ { get; set; }
-
-
-        public event EventHandler Warning;
         
 
         public Separation()
