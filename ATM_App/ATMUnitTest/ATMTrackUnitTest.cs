@@ -18,11 +18,11 @@ namespace ATMTrackUnitTest
     [Author("Mette Jacobsen, Edited by members of group 21")]
 
 
-    class ITrackTest
+    class TrackTest
     {
-        public ITrack Track1 = new Track();
+        public Track Track1 = new Track();
 
-        public ITrack Ib
+        public Track Ib
         {
             get => Track1;
             set => Track1 = value;

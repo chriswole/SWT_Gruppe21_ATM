@@ -8,7 +8,7 @@ namespace ATM.Interfaces
 {
     public interface IToTrack
     {
-         List<ITrack> Tracks { get; set; }
+         List<Track> Tracks { get; set; }
 
 
 
