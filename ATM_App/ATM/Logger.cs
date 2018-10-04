@@ -11,7 +11,7 @@ namespace ATM
 {
     class Logger
     {
-        public void AddToLog(IDanger danger2Log)
+        public void AddToLog(Danger danger2Log)
         {
             try
             {

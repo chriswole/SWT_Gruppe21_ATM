@@ -9,7 +9,7 @@ using TransponderReceiver;
 
 namespace ATM
 {
-    public class ToTrack : IToTrack
+    public class ToTrack 
     {
         public List<Track> Tracks { get; set; }
 

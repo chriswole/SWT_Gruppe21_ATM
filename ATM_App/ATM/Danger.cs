@@ -7,7 +7,7 @@ using ATM.Interfaces;
 
 namespace ATM
 {
-    public class Danger :IDanger
+    public class Danger 
     {
         //Constructor
         public Danger(Track track1, Track track2, int dist)

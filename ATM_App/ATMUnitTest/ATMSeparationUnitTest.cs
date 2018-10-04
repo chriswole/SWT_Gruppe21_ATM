@@ -17,11 +17,11 @@ namespace ATMUnitTest
         /*[SetUp]
         public void Setup()
         {
-            newDangers_ = new List<IDanger>();
-            oldDangers_ = new List<IDanger>();
-            //NSubstitute.Substitute.For<IDanger>()
+            newDangers_ = new List<Danger>();
+            oldDangers_ = new List<Danger>();
+            //NSubstitute.Substitute.For<Danger>()
         }*/
-
+/*
         [Test]
         public void raiseAlarm()
         {
@@ -39,7 +39,7 @@ namespace ATMUnitTest
                 Assert.AreEqual(1, oldDangers_.Except(newDangers_));
             }
         }
-
+        */
 
 
     }

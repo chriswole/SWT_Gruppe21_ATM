@@ -8,6 +8,6 @@ namespace ATM.Interfaces
 {
     public interface ILogger
     {
-        void AddToLog(IDanger danger2Log);
+        void AddToLog(Danger danger2Log);
     }
 }

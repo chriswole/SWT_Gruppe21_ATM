@@ -10,8 +10,8 @@ namespace ATM
 {
     public class Separation : ISeparation
     {
-        public List<IDanger> newDangers_ { get; set; }
-        public List<IDanger> OldDangers_ { get; set; }
+        public List<Danger> newDangers_ { get; set; }
+        public List<Danger> OldDangers_ { get; set; }
 
 
         public event EventHandler Warning;
@@ -19,11 +19,11 @@ namespace ATM
 
         public Separation()
         {
-            newDangers_ = new List<IDanger>();
-            OldDangers_ = new List<IDanger>();
+            newDangers_ = new List<Danger>();
+            OldDangers_ = new List<Danger>();
         }
 
-        public void calculateDistances(IToTrack toTrackObj)
+        public void calculateDistances(ToTrack toTrackObj)
         {
             foreach (var track1 in toTrackObj.Tracks)
             {
