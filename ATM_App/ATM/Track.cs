@@ -29,6 +29,8 @@ namespace ATM
         public int course_ { get; set; }
         public string timestamp_{get; set;}
         
+
+        /*
     public override string ToString()
         {
             string str = $"Track:\n " +
@@ -38,7 +40,7 @@ namespace ATM
                          $"{hori_velocity_}\n " +
                          $"{timestamp_}\n";
             return str;
-        }
+        }*/
 
        public static bool operator==(Track track1, Track track2)
         {
