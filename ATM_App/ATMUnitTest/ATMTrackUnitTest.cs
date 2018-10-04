@@ -40,9 +40,14 @@ namespace ATMTrackUnitTest
 
         }
 
-        [TestCase] //eller (Test)
+        /*[TestCase] //eller (Test)
 
+<<<<<<< HEAD
     }
+=======
+    */
+    }
+
 }
         
     
