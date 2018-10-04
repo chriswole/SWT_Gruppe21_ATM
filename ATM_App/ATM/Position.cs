@@ -9,7 +9,7 @@ using ATM.Interfaces;
 
 namespace ATM.Interfaces
 {
-    public class Position:Position
+    public class Position
     {
         public Position(int x=0, int y=0)
         {
