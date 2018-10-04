@@ -32,11 +32,19 @@ namespace ATM
                     {
                         // are the planes too close in xy-plane
                         Position dist = track1.pos_ - track2.pos_;
-                        var distance = Math.Sqrt(dist.x_ ^ 2 + dist.y_ ^ 2);
+                        var distance = Math.Round(Math.Sqrt(dist.x_ ^ 2 + dist.y_ ^ 2));
+                        //remove then done
+                        Console.Write(track1.tag_);
+                        Console.Write(" ");
+                        Console.Write(track2.tag_);
+                        Console.Write(" ");
+                        Console.Write(distance);
+                        Console.WriteLine(" ");
+                        //remove till here
                         if (distance < 5000)
                         {
                             // Is the planes actually the same - if not make a dangerObj
-                            if (!(track1.Equals(track2)))
+                            if (track1.tag_ != track2.tag_)
                             {
                                 Danger dangerObj = new Danger(track1, track2, (int) distance);
                                 newDangers_.Add(dangerObj);
