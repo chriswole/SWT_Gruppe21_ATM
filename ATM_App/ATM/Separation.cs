@@ -50,7 +50,21 @@ namespace ATM
 
 
 
+        public void deactivateAlarm()
+        {
+            if (OldDangers_.SequenceEqual(OldDangers_))
+            {
+                OldDangers_.Clear();
+            }
+            else
+            {
+                //Compares newDangers_ with OldDangers_ and removes matching elements from OldDangers_
+                OldDangers_.Except(newDangers_);
+            }
+                    
 
+
+        }
 
 
         public void raiseAlarm()
@@ -59,25 +73,27 @@ namespace ATM
             
             foreach (var dangerObj in newDangers_)
             {
-                //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
-                var newDangers = newDangers_.Except(OldDangers_);
-                newDangers_.ForEach(danger => Console.Write("Warning, the following planes are too close!\n{0}",newDangers_));
+                //Compares newDangers_ with OldDangers_
+                if (newDangers_.SequenceEqual(OldDangers_))
+                {
+                    //If Equal, print the tracks
+                    newDangers_.ForEach(danger => Console.Write("Warning, the following planes are too close!\n{0}", newDangers_));
+                }
+
+                else
+                {
+                    //If not equal, add newDangers to OldDangers
+                    newDangers_.AddRange(OldDangers_);
+
+                    //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
+                    newDangers_.Except(OldDangers_);
+                }
+
             }
 
-            //System.Threading.Thread.Sleep(5000);
-            // newDangers_.ForEach(Console.Write("{0}\t", newDangers_));
 
         }
 
-        public void deactivateAlarm()
-        {
-            foreach (var dangerObj in OldDangers_)
-            {
-                //Compares newDangers_ with OldDangers_ and removes matching elements from OldDangers_
-                var oldDangers = OldDangers_.Except(newDangers_);
-            }
-            
 
-        }
     }
 }

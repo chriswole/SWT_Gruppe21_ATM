@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using ATM;
 using NUnit.Framework;
 using ATM.Interfaces;
+using NUnit.Framework.Internal;
 
 
 namespace ATMUnitTest
@@ -18,7 +19,9 @@ namespace ATMUnitTest
        
 
         ISeparation TestSeparation = new Separation();
-        private List<Track> testList;
+        Track track1_ = new Track();
+        Track track2_ = new Track();
+        int dist;
 
         [SetUp]
 
@@ -26,19 +29,12 @@ namespace ATMUnitTest
 
         public void Setup()
         {
-            
-            TestSeparation.newDangers_ = new List<Danger>();
-            TestSeparation.OldDangers_ = new List<Danger>();
-            testList = new List<Track>();
-
-
+          
         }
 
         [Test]
         public void raiseAlarmTrue()
         {
-
-            List<Danger> results = new List<Danger>();
             
             Assert.IsTrue(TestSeparation.newDangers_.Except(TestSeparation.OldDangers_).Count()==0);
         }
@@ -46,24 +42,21 @@ namespace ATMUnitTest
         [Test]
         public void raiseAlarmFalse()
         {
-            List<Danger> results = new List<Danger>();
-
+            TestSeparation.newDangers_.Add(new Danger(track1_, track2_, dist));
             Assert.IsFalse(TestSeparation.newDangers_.Except(TestSeparation.OldDangers_).Count() == 0);
         }
 
         [Test]
         public void deactivateAlarmTrue()
         {
-            List<Danger> results = new List<Danger>();
-
             Assert.IsTrue(TestSeparation.OldDangers_.Except(TestSeparation.newDangers_).Count() == 0);
         }
 
         [Test]
         public void deactivateAlarmFalse()
         {
-            List<Danger> results = new List<Danger>();
-
+            TestSeparation.newDangers_.Add(new Danger(track1_, track2_, dist));
+            TestSeparation.newDangers_.Add(new Danger(track1_, track2_, dist));
             Assert.IsFalse(TestSeparation.OldDangers_.Except(TestSeparation.newDangers_).Count() == 0);
         }
 
