@@ -23,8 +23,23 @@ namespace ATMUnitTest
             //NSubstitute.Substitute.For<IDanger>()
         }
 
+        [Test]
+        public void raiseAlarm()
+        {
+            foreach (var danger in newDangers_)
+            {
+                Assert.AreEqual(1, newDangers_.Except(oldDangers_));
+            }
+        }
 
-
+        [Test]
+        public void deactivateAlarm()
+        {
+            foreach (var danger in oldDangers_)
+            {
+                Assert.AreEqual(1, oldDangers_.Except(newDangers_));
+            }
+        }
 
 
 
