@@ -28,7 +28,7 @@ namespace ATMTrackUnitTest
             set => Track1 = value;
         }
 
-        [SetUp]//Husk stort U!
+        [SetUp] //Husk stort U!
         public void Setup()
         {
             Track1.tag_ = "Mc238";
@@ -36,14 +36,14 @@ namespace ATMTrackUnitTest
             Track1.altitude_ = 10000;
             Track1.hori_velocity_ = 2000;
             Track1.course_ = 89;
-            Track1.timestamp_="12:00";//hvordan skal de sættes?
+            Track1.timestamp_ = "12:00"; //hvordan skal de sættes?
 
         }
 
-        [TestCase] //eller (Test)
+        /*[TestCase] //eller (Test)
 
-
-        }
+    */
+    }
 
 }
         

@@ -27,8 +27,8 @@ namespace ATMUnitTest
 
             _uut = new Danger(track1_, track2_,2500 );
         }
-/*
-        [TestCase()]
+        /*
+        [Test]
         public void CanNotChangeTracks()
         {
             track1_ = new ;
