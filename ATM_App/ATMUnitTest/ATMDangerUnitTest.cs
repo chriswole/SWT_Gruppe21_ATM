@@ -14,8 +14,8 @@ namespace ATMUnitTest
     {
         public Danger _uut;
 
-        public ITrack track1_ { get; }
-        public ITrack track2_ { get; }
+        public Track track1_ { get; }
+        public Track track2_ { get; }
         public int distance_ { get; }
 
         

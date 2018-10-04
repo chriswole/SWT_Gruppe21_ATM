@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 namespace ATM.Interfaces
 {
-    public interface ITrack
+    public interface Track
     {
         string tag_ { get; set; }
         Position pos_ { get; set; }
