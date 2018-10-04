@@ -19,9 +19,7 @@ namespace ATMUnitTest
        
 
         ISeparation TestSeparation = new Separation();
-        Track track1_ = new Track();
-        Track track2_ = new Track();
-        int dist;
+
 
         [SetUp]
 
@@ -31,34 +29,38 @@ namespace ATMUnitTest
         {
           
         }
-
+        /*
         [Test]
-        public void raiseAlarmTrue()
+        public void raiseAlarmIf()
         {
-            
-            Assert.IsTrue(TestSeparation.newDangers_.Except(TestSeparation.OldDangers_).Count()==0);
+            TestSeparation.calculateDistances(trackList:);
+            TestSeparation.newDangers_.Add(new Danger(Track track1: Track track2:  ));
+            //Compares newDangers_ with OldDangers_
+            if (TestSeparation.newDangers_.SequenceEqual(TestSeparation.OldDangers_))
+            {
+                //If Equal, print the tracks
+                TestSeparation.newDangers_.ForEach(danger => Console.Write("Warning, the following planes are too close!\n{0}", newDangers_));
+            }
+
         }
 
         [Test]
-        public void raiseAlarmFalse()
+        public void raiseAlarmElse()
         {
-            TestSeparation.newDangers_.Add(new Danger(track1_, track2_, dist));
-            Assert.IsFalse(TestSeparation.newDangers_.Except(TestSeparation.OldDangers_).Count() == 0);
+            
         }
 
         [Test]
         public void deactivateAlarmTrue()
         {
-            Assert.IsTrue(TestSeparation.OldDangers_.Except(TestSeparation.newDangers_).Count() == 0);
+            
         }
 
         [Test]
         public void deactivateAlarmFalse()
         {
-            TestSeparation.newDangers_.Add(new Danger(track1_, track2_, dist));
-            TestSeparation.newDangers_.Add(new Danger(track1_, track2_, dist));
-            Assert.IsFalse(TestSeparation.OldDangers_.Except(TestSeparation.newDangers_).Count() == 0);
-        }
+            
+        }*/
 
     }
 }
