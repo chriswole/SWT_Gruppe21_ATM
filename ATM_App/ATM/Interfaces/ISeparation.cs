@@ -11,7 +11,7 @@ namespace ATM.Interfaces
         List<Danger> newDangers_ { get; set; }
         List<Danger> OldDangers_ { get; set; }
 
-        void calculateDistances(ToTrack toTrackObj);
+        void calculateDistances(List<Track> trackList);
         void raiseAlarm();
         void deactivateAlarm();
     }
