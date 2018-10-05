@@ -1,0 +1,43 @@
+<diagram program="umletino" version="14.3.0"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>490</x><y>500</y><w>140</w><h>170</h></coordinates><panel_attributes>Track
+--
++ Track(): void
++ print() : void
++ string Tag_
++ Position position_
++ int altitude_
++ int hori_velocity_
++ int course_
++ TimeStamp time_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>170</x><y>300</y><w>440</w><h>110</h></coordinates><panel_attributes>ToTrack
+--
++ List&lt;Track&gt; Tracks
++ ReceiverOnTransponderData(Object, RawTransponderDataEventArgs): void
++ ParseDataString(string):string
++ BuildTrack(string[]):Track
++ InScope(Track):bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>0</y><w>180</w><h>80</h></coordinates><panel_attributes>Monitor
+--
++ initMonitor(): void
++ updateMonitor(): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>510</x><y>120</y><w>240</w><h>120</h></coordinates><panel_attributes>Separation
+--
++ calculateDistances(): void
++ RaiseAlarm(): void
++ DeactivateAlarm(): void
++ List&lt;Danger&gt; newDangers_
++ List&lt;Danger&gt; oldDangers_</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>300</y><w>230</w><h>70</h></coordinates><panel_attributes>Logger
+--
++ AddToLog(Danger danger2Log): void</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>520</x><y>710</y><w>80</w><h>60</h></coordinates><panel_attributes>Position
+--
++ int x_
++ int y_</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>660</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>400</y><w>50</w><h>120</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;&lt;-
+
+
+0..n</panel_attributes><additional_attributes>10;10;10;100</additional_attributes></element><element><id>Relation</id><coordinates><x>380</x><y>230</y><w>260</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;70;10;40;240;40;240;10</additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>230</y><w>160</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>140;70;140;40;10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>620</x><y>70</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;50;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>300</x><y>480</y><w>130</w><h>100</h></coordinates><panel_attributes>Reciever
+--
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>400</y><w>30</w><h>100</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;80;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>300</y><w>250</w><h>120</h></coordinates><panel_attributes>Danger
+--
++ Track track1_
++ Track track2_
++ int distance_
++ operator == (Danger,Danger):static bool
++ operator != ( Danger, Danger):static bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>610</x><y>230</y><w>380</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>360;70;360;40;10;40;10;10</additional_attributes></element></diagram>
