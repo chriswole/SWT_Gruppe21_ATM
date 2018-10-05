@@ -11,14 +11,14 @@ namespace ATM.Interfaces
 {
     public class Position
     {
-        public Position(int x=0, int y=0)
+        public Position(long x=0, long y=0)
         {
             x_ = x;
             y_ = y;
         }
 
-        public int x_ { get; set; }
-        public int y_ { get; set; }
+        public long x_ { get; set; }
+        public long y_ { get; set; }
 
         public static Position operator-(Position pos1, Position pos2)
         {
@@ -38,6 +38,12 @@ namespace ATM.Interfaces
 
             return pos1.x_ <= pos2.x_ && pos1.y_ <= pos2.y_;
         }
+
+        public void print()
+        {
+            Console.WriteLine($"x = {x_}, y = {y_}");
+        }
+
 
     }
 }

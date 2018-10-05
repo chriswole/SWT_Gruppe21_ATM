@@ -21,7 +21,8 @@ namespace ATM_App
             Danger d1=new Danger(T1,T2,5412);
             d1.print();
             */
-            
+            double test = Math.Sqrt(3 ^ 2 + 4 ^ 2);
+            Console.WriteLine(test);
         }
     }
 }
