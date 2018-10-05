@@ -9,7 +9,7 @@ using ATM.Interfaces;
 
 namespace ATM
 {
-    public class Track 
+    public class Track //make track
     {
         public Track(string tag = "", Position pos = null, int altitude = 0, int horiVelocity = 0, int course = 0,
             string timestamp = "" )
