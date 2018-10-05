@@ -60,7 +60,7 @@ namespace ATM
 
         public void deactivateAlarm()
         {
-            if (OldDangers_.SequenceEqual(OldDangers_))
+            if (OldDangers_.SequenceEqual(newDangers_))
             {
                 //Clears the OldDanger List, so the new dangers can be added
                 OldDangers_.Clear();
@@ -93,7 +93,10 @@ namespace ATM
                 {
                     //If not equal, add newDangers to OldDangers
                     newDangers_.AddRange(OldDangers_);
+
+                    //Add new element to Logger
                     new Logger().AddToLog(dangerObj);
+                    
                     //Compares newDangers_ with OldDangers_ and removes matching elements from newDangers_
                     newDangers_.Except(OldDangers_);
                 }
