@@ -17,6 +17,7 @@ namespace ATMUnitTest
         private ITransponderReceiver _fakeTransponderReceiver;
         private ToTrack _uut;
         [SetUp]
+        [Author("Kasper Andersen, Edited by members of group 21")]
         public void Setup()
         {
             // Make a fake Transponder Data Receiver
