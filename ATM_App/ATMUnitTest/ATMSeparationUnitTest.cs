@@ -50,53 +50,39 @@ namespace ATMUnitTest
         }
 
         [Test]
-        public void CalculateDistanceTest()
+        public void TrackAlarmTrue()
         {
-            TestSeparation.calculateDistances(trackList);
-
-            //Assert.That(TestSeparation.newDangers_.Contains(D1), Is.EqualTo(true));
-            //Assert.That(TestSeparation.newDangers_, Is.Not.Empty);
-            //Assert.That(TestSeparation.newDangers_.Count, Is.EqualTo(1));
-            
-            foreach (var Dang in TestSeparation.newDangers_)
-            {
-                Dang.print();
-            }
-            //Assert.That(TestSeparation.newDangers_[0],Is.EqualTo(D1));
+            //Testing if Old and new Dangers are Equal
+            Assert.AreEqual(TestSeparation.newDangers_, TestSeparation.OldDangers_);
         }
 
-        /*
-        [Test]
-        public void raiseAlarmIf()
-        {
-            TestSeparation.calculateDistances(trackList:);
-            TestSeparation.newDangers_.Add(new Danger(Track track1: Track track2:  ));
-            //Compares newDangers_ with OldDangers_
-            if (TestSeparation.newDangers_.SequenceEqual(TestSeparation.OldDangers_))
-            {
-                //If Equal, print the tracks
-                TestSeparation.newDangers_.ForEach(danger => Console.Write("Warning, the following planes are too close!\n{0}", newDangers_));
-            }
 
+        [Test]
+        public void TrackAlarmFalse()
+        {
+            //Adding elements to lists
+            TestSeparation.newDangers_.Add(new Danger(T1, T2, 5000));
+            TestSeparation.OldDangers_.Add(new Danger(T3, T2, 4000));
+
+            //Testing if Old and new dangers are Equal
+            Assert.AreNotEqual(TestSeparation.newDangers_, TestSeparation.OldDangers_);
+
+            //Cleaning up Lists
+            TestSeparation.newDangers_.Clear();
+            TestSeparation.OldDangers_.Clear();
         }
 
         [Test]
-        public void raiseAlarmElse()
+        public void ClearingDeactivateAlarm()
         {
-            
-        }
+            //Emptying Old danger list
+            TestSeparation.OldDangers_.Clear();
 
-        [Test]
-        public void deactivateAlarmTrue()
-        {
-            
+            //Testing if list is empty
+            CollectionAssert.IsEmpty(TestSeparation.OldDangers_);
         }
-
-        [Test]
-        public void deactivateAlarmFalse()
-        {
-            
-        }*/
 
     }
+
 }
+
