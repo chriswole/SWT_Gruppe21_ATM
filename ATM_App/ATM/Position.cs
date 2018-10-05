@@ -39,10 +39,10 @@ namespace ATM.Interfaces
             return pos1.x_ <= pos2.x_ && pos1.y_ <= pos2.y_;
         }
 
-        public void print()
-        {
-            Console.WriteLine($"x = {x_}, y = {y_}");
-        }
+        //public void print()
+        //{
+        //    Console.WriteLine($"x = {x_}, y = {y_}");
+        //}
 
 
     }
