@@ -87,16 +87,17 @@ namespace ATMUnitTest
         public void TestCalculateDistance()
         {
             TestSeparation.calculateDistances(trackList);
-           // Assert.That(TestSeparation.newDangers_.Contains(D1),Is.EqualTo(true));
+
             Assert.That(TestSeparation.newDangers_,Is.Not.Empty);
             Assert.That(TestSeparation.newDangers_.Count,Is.EqualTo(2));
-            // Assert.That(TestSeparation.newDangers_[0],Is.EqualTo(D1));
+            Assert.That(TestSeparation.newDangers_[0]==D1,Is.EqualTo(true));
+            /*
             foreach (var Dang in TestSeparation.newDangers_)
             {
                 Dang.print();
-            }
+            }*/
 
-
+            
 
         }
 
